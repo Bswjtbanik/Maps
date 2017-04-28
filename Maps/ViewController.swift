@@ -17,6 +17,23 @@ class ViewController: UIViewController ,MKMapViewDelegate {
         
         mapView.delegate = self
         
+        
+        
+        let lat : CLLocationDegrees = 23
+        let lon : CLLocationDegrees = 90
+        
+        let latDelta : CLLocationDegrees = 0.5
+        let lonDelta : CLLocationDegrees = 0.5
+        
+        let span : MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
+        
+        let location : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        
+        let region : MKCoordinateRegion = MKCoordinateRegion(center: location, span: span)
+        
+        mapView.setRegion(region, animated: true)
+        
+        
     }
 
     
